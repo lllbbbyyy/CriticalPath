@@ -1,0 +1,12 @@
+{
+  "name": "your-app",
+  "version": "0.1.0",
+  "main": "main.js",
+  "devDependencies": {
+    "electron": "^8.0.3"
+  },
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . CriticalPath --platform=win32 --arch=x64 --out=./CriticalPath --asar --app-version=0.0.1 --overwrite --ignore=node_modules"
+  }
+}

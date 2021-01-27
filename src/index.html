@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>邻接链表、拓扑排序、关键路径</title>
+    <link rel="stylesheet" type="text/css" href="./css/click.css" />
+    <link rel="stylesheet" type="text/css" href="./css/input.css" />
+
+</head>
+
+<body>
+    <div id="input_area">
+        请输入图的节点个数：
+        <br />
+        <input id="input_node_num" type="text" class="mytxt" value="10" maxlength="50" />
+        <br />
+        <br />
+        依次输入各个节点的编号，以空格隔开：
+        <br />
+        <input id="input_node_info" type="text" class="mytxt" value="0 1 2 3 4 5 6 7 8 9" maxlength="200"
+            style="width: 90vh;" />
+        <br />
+        <br />
+        请输入边的个数：
+        <br />
+        <input id="input_edge_num" type="text" class="mytxt" value="13" maxlength="50" />
+        <br />
+        <br />
+        每行输入一条边的信息，u v w表示一条从节点u到节点v的边，边权为w：
+        <br />
+        <textarea id="input_edge_info" rows="11" cols="20" class="mytxt" style="width: 90vh;" maxlength="500">0 1 3
+0 2 4
+1 3 5
+1 4 6
+2 3 8
+2 5 7
+3 4 3
+5 7 6
+4 7 4
+4 6 9
+7 8 5
+6 9 2
+8 9 3</textarea>
+        <br />
+        请输入拓扑排序的动画延迟（毫秒）：
+        <br />
+        <input id="delay_sort" type="text" class="mytxt" value="2000" maxlength="50" />
+    </div>
+    <div id="draw_area" style="height: 800px;display: none;"></div>
+    <div id="draw_area2" style="display: none;"></div>
+    <div class="click" id="click_area">
+        <button id="input1" onclick="reset();" style="display: none;">重新输入</button>
+        <button id="input2"
+            onclick="try{show_adjacency_list();}catch(e){remote.dialog.showErrorBox('输入有误','请重新输入');reset();}">邻接链表</button>
+        <button id="input3"
+            onclick="try{show_topological_sort();}catch(e){remote.dialog.showErrorBox('输入有误','请重新输入');reset();}">拓扑排序</button>
+        <button id="input4" onclick="show_critical_path();">关键路径</button>
+    </div>
+    <script src="./js/echarts.js"></script>
+    <script src="./js/init.js"></script>
+    <script src="./js/adjacencyList.js"></script>
+    <script src="./js/topologicalSort.js"></script>
+    <script src="./js/criticalPath.js"></script>
+</body>
+
+</html>
